@@ -16,8 +16,8 @@ Para utilizar esta extensão, é necessário ter a ferramenta de linha de comand
 
 Esta extensão disponibiliza as seguintes configurações (settings):
 
-* `seshat.executablePath`: Caminho para o executável gerador dos commits (padrão: `seshat`). Altere para o caminho absoluto caso o comando não esteja sendo encontrado automaticamente.
-* `seshat.autoOpenPanel`: Define se o painel interativo do Seshat deve ou não abrir automaticamente ao iniciar a geração de um commit (padrão: `true`).
+- `seshat.executablePath`: Caminho para o executável gerador dos commits (padrão: `seshat`). Altere para o caminho absoluto caso o comando não esteja sendo encontrado automaticamente.
+- `seshat.autoOpenPanel`: Define se o painel interativo do Seshat deve ou não abrir automaticamente ao iniciar a geração de um commit (padrão: `true`).
 
 ## 🛠️ Como Usar
 
@@ -34,6 +34,3 @@ Se desejar alterar a extensão, os seguintes scripts estão disponíveis (utiliz
 - `pnpm run build`: Compila o código TypeScript em um pacote JavaScript utilizável.
 - `pnpm run watch`: Executa o *esbuild* em modo "watch", reconstruindo automaticamente as mudanças enquanto você as digita.
 - `pnpm run package`: Monta (empacota) a versão optimizada de produção para distribuir como extensão (`.vsix`).
-
----
-**Desenvolvido por junior**
