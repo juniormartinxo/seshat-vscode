@@ -1,0 +1,70 @@
+{
+  "name": "seshat-vscode",
+  "displayName": "Seshat",
+  "description": "AI-powered Conventional Commits via Seshat CLI",
+  "version": "0.1.0",
+  "publisher": "junior",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "SCM Providers"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "packageManager": "pnpm@10.30.3",
+  "contributes": {
+    "commands": [
+      {
+        "command": "seshat.commit",
+        "title": "✨ Seshat Commit",
+        "icon": "$(sparkle)"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "seshat.commit",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "seshat.commit",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s"
+      }
+    ],
+    "configuration": {
+      "title": "Seshat",
+      "properties": {
+        "seshat.executablePath": {
+          "type": "string",
+          "default": "seshat",
+          "description": "Caminho para o executável seshat"
+        },
+        "seshat.autoOpenPanel": {
+          "type": "boolean",
+          "default": true,
+          "description": "Abrir o painel Seshat automaticamente ao iniciar um commit"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "node esbuild.js --production",
+    "vscode:prepublish": "pnpm run package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.4.5"
+  }
+}
